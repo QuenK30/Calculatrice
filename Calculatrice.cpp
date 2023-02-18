@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-using namespace std;
 
 //Calculatrice class
 class Calculatrice
@@ -26,19 +25,19 @@ class AskForCalc
 {
 public:
     void AskCalc() {
-        cout << "Que veux tu calculer ? (+ / - / / )" << endl;
-        cin >> operator_;
-        cout << "Quel est le premier nombre ?" << endl;
-        cin >> numberone_;
-        cout << "Quel est le second nombre ?" << endl;
-        cin >> numbersecond_;
+        std::cout << "Que veux tu calculer ? (+ / - / / )" << std::endl;
+        std::cin >> operator_;
+        std::cout << "Quel est le premier nombre ?" << std::endl;
+        std::cin >> numberone_;
+        std::cout << "Quel est le second nombre ?" << std::endl;
+        std::cin >> numbersecond_;
     }
-    string getOperator() { return operator_; }
+    std::string getOperator() { return operator_; }
     int getFirstNumber() { return numberone_; }
     int getSecondNumber() { return numbersecond_; }
 
 private:
-    string operator_;
+    std::string operator_;
     int numberone_ = 0;
     int numbersecond_ = 0 ;
 };
@@ -51,18 +50,18 @@ int main()
 
     if (afc.getOperator() == "+") {
         int result = calculatrice.addition(afc.getFirstNumber(), afc.getSecondNumber());
-        cout << "Le résultat de ton addition est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << endl;
+        std::cout << "Le résultat de ton addition est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << std::endl;
     }else
         if (afc.getOperator() == "-") {
             int result = calculatrice.soustraction(afc.getFirstNumber(), afc.getSecondNumber());
-            cout << "Le résultat de ton addition est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << endl;
+            std::cout << "Le résultat de ta soustraction est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << std::endl;
         }else
             if (afc.getOperator() == "/") {
                 int result = calculatrice.division(afc.getFirstNumber(), afc.getSecondNumber());
-                cout << "Le résultat de ton addition est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << endl;
+                std::cout << "Le résultat de ta division est (" << afc.getFirstNumber() << " + " << afc.getSecondNumber() << ") = " << result << std::endl;
             }
             else {
-                cout << "L'opérateur n'est pas enregistré." << endl;
+                std::cout << "L'opérateur n'est pas enregistré." << std::endl;
             }
 
 
